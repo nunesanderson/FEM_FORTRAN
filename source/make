@@ -1,0 +1,6 @@
+execname: $(msg_IO.f95 gmsh_IO.f95  shape_functions.f95 main.f95 gmsh_IO.f95 types.f95  FEM.f95  )
+	gfortran-9 -c msg_IO.f95 shape_functions.f95 gmsh_IO.f95 types.f95 FEM.f95
+	
+
+	gfortran-9 -o main main.f95 gmsh_IO.o shape_functions.o msg_IO.o types.o FEM.o -llapack -lblas
+	#gfortran-9 -fcheck=all main.f95
